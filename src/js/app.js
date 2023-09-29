@@ -363,7 +363,7 @@ async function reservarCita(){
 
     try{
 
-        const url = `${location.origin}/api/citas`;
+        const url = '/api/citas';
 
         const respuesta = await fetch(url, {
             method: 'POST',
@@ -396,10 +396,6 @@ async function reservarCita(){
         }
 
     }catch (error){
-
-        console.log(error);
-
-        return;
 
         Swal.fire({
             icon: 'error',

@@ -7,6 +7,9 @@ class ActiveRecord {
     protected static $tabla = '';
     protected static $columnasDB = [];
 
+    // Definir implícitamente las propiedades.
+    public $id;
+
     // Alertas y Mensajes
     protected static $alertas = [];
     
