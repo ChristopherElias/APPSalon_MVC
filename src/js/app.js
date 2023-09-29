@@ -121,7 +121,7 @@ async function consultarAPI(){
 
     try {
 
-        const url = '/api/servicios';
+        const url = `${location.origin}/api/servicios`;
         const resultado = await fetch(url);
         const servicios = await resultado.json();
         mostrarServicios(servicios);
@@ -363,7 +363,7 @@ async function reservarCita(){
 
     try{
 
-        const url = '/api/citas';
+        const url = `${location.origin}/api/citas`;
 
         const respuesta = await fetch(url, {
             method: 'POST',
@@ -397,10 +397,14 @@ async function reservarCita(){
 
     }catch (error){
 
+        console.log(error);
+
+        return;
+
         Swal.fire({
             icon: 'error',
             title: 'Error',
-            text: 'Ocurrió un error!'
+            text: 'Ocurrió un error! ' + error
         })
 
     }
